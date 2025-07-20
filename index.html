@@ -9,10 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo&family=Exo+2:wght@100&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="https://github.com/thiciriano/meu-portifolio/tree/main/assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
   <!-- Lucide Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body class="light" aria-live="polite">
 
@@ -20,63 +20,41 @@
     <nav aria-label="Main Navigation">
       <img src="assets/logo.svg" alt="Thiago Neves Logo" class="logo" id="logo" />
       <ul class="nav-list">
-        <li><a href="#about" class="nav-link">{About Me}</a></li>
-        <li><a href="#projects" class="nav-link">{Projects}</a></li>
-        <li><a href="#skills" class="nav-link">{Skills}</a></li>
-        <li><a href="#contact" class="nav-link">{Contact}</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <button id="theme-toggle" aria-label="Toggle light and dark mode" aria-pressed="false" class="theme-btn" type="button">
-        <!-- Lucide icon will be replaced by JS -->
-        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
+        <i data-lucide="sun" id="theme-icon" aria-hidden="true"></i>
       </button>
     </nav>
   </header>
 
   <main>
+    <!-- About Me -->
     <section id="about" tabindex="0" aria-label="About Me Section">
-      <h1 class="title">{About Me}</h1>
+      <h1 class="title">About Me</h1>
       <img src="assets/profile.jpg" alt="Photo of Thiago Neves" class="profile-photo" />
-      <h2 class="subtitle">[Frontend Developer]</h2>
+      <h2 class="subtitle">Frontend Developer</h2>
       <p class="text">
         I'm Thiago Neves, a passionate front-end developer dedicated to crafting clean, accessible, and responsive web experiences. I specialize in modern web technologies and minimalist design.
       </p>
     </section>
 
+    <!-- Projects -->
     <section id="projects" tabindex="0" aria-label="Projects Section">
-      <h1 class="title">{Projects}</h1>
-      <h2 class="subtitle">[Selected Work]</h2>
+      <h1 class="title">Projects</h1>
+      <h2 class="subtitle">Selected Work</h2>
       <div class="projects-grid">
-        <article class="project-card" tabindex="0">
-          <img src="assets/project1.jpg" alt="Project 1 screenshot" />
-          <h3 class="project-title">Project One</h3>
-          <p class="text">TEXT HERE</p>
-        </article>
-        <article class="project-card" tabindex="0">
-          <img src="assets/project2.jpg" alt="Project 2 screenshot" />
-          <h3 class="project-title">Project Two</h3>
-          <p class="text">TEXT HERE</p>
-        </article>
-        <article class="project-card" tabindex="0">
-          <img src="assets/project3.jpg" alt="Project 3 screenshot" />
-          <h3 class="project-title">Project Three</h3>
-          <p class="text">TEXT HERE</p>
-        </article>
+        <!-- Add project cards here -->
       </div>
     </section>
 
+    <!-- Skills -->
     <section id="skills" tabindex="0" aria-label="Skills Section">
-      <h1 class="title">{Skills}</h1>
-      <h2 class="subtitle">[Technologies & Tools]</h2>
+      <h1 class="title">Skills</h1>
+      <h2 class="subtitle">Technologies & Tools</h2>
       <ul class="skills-list">
         <li><i data-lucide="html5" aria-hidden="true"></i> HTML5</li>
         <li><i data-lucide="css3" aria-hidden="true"></i> CSS3</li>
@@ -86,26 +64,24 @@
       </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact" tabindex="0" aria-label="Contact Section">
-      <h1 class="title">{Contact}</h1>
-      <h2 class="subtitle">[Get In Touch]</h2>
+      <h1 class="title">Contact</h1>
+      <h2 class="subtitle">Get In Touch</h2>
       <form id="contact-form" novalidate>
-        <label for="name">{Name}</label>
-        <input type="text" id="name" name="name" aria-required="true" aria-describedby="name-tooltip" />
-        <div class="tooltip" id="name-tooltip" role="alert" aria-live="assertive"></div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
 
-        <label for="email">{Email}</label>
-        <input type="email" id="email" name="email" aria-required="true" aria-describedby="email-tooltip" />
-        <div class="tooltip" id="email-tooltip" role="alert" aria-live="assertive"></div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
 
-        <label for="message">{Message}</label>
-        <textarea id="message" name="message" rows="4" aria-required="true" aria-describedby="message-tooltip"></textarea>
-        <div class="tooltip" id="message-tooltip" role="alert" aria-live="assertive"></div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit" class="btn-submit" aria-label="Send message">{Send}</button>
+        <button type="submit" class="btn-submit">Send</button>
       </form>
 
-      <div class="social-links" aria-label="Social media links">
+      <div class="social-links">
         <a href="https://github.com/thiciriano" target="_blank" rel="noopener" aria-label="GitHub">
           <i data-lucide="github" aria-hidden="true"></i>
         </a>
@@ -123,7 +99,8 @@
     <p>© 2025 Thiago Neves</p>
   </footer>
 
-  <script src="meu-portifolio/assets/js/script.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
   <script>
     lucide.replace();
   </script>
