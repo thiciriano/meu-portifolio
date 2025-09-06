@@ -1,5 +1,3 @@
-// Theme toggle and form validation
-
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const logo = document.getElementById('logo');
@@ -8,7 +6,6 @@ const themeIcon = document.getElementById('theme-icon');
 function setLightMode() {
   body.classList.remove('dark');
   themeToggle.setAttribute('aria-pressed', 'false');
-  // Change icon to sun (black)
   themeIcon.innerHTML = `
     <circle cx="12" cy="12" r="5"></circle>
     <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -25,7 +22,6 @@ function setLightMode() {
 function setDarkMode() {
   body.classList.add('dark');
   themeToggle.setAttribute('aria-pressed', 'true');
-  // Change icon to moon (white)
   themeIcon.innerHTML = `
     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
   `;
@@ -43,7 +39,6 @@ themeToggle.addEventListener('click', () => {
   toggleTheme();
 });
 
-// Initialize icon and mode based on stored preference or default light mode
 const storedTheme = localStorage.getItem('theme');
 if (storedTheme === 'dark') {
   setDarkMode();
@@ -51,13 +46,11 @@ if (storedTheme === 'dark') {
   setLightMode();
 }
 
-// Save theme to localStorage on toggle
 themeToggle.addEventListener('click', () => {
   const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
   localStorage.setItem('theme', currentTheme);
 });
 
-// Form validation and tooltip functions
 const form = document.getElementById('contact-form');
 
 function setTooltip(element, message) {
@@ -104,7 +97,6 @@ form.addEventListener('submit', (event) => {
 
   if (!valid) return;
 
-  // TODO: Implement actual sending logic here
   alert('Message sent! Thank you.');
 
   form.reset();
